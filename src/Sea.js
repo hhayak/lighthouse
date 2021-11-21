@@ -31,14 +31,14 @@ function AddItemDialog(props) {
 
     React.useEffect(() => {
         async function checkUser() {
-          if (isAuthenticated) {
-            setEmail(user.email);
-          } else {
-            //history("/login");
-          }
+            if (isAuthenticated) {
+                setEmail(user.email);
+            } else {
+                //history("/login");
+            }
         }
         checkUser();                            // called async checkUser()
-      }, [isAuthenticated]);
+    }, [isAuthenticated]);
 
     const [itemName, setItemName] = React.useState('');
     const handleItemNameChange = (event) => {
@@ -90,14 +90,14 @@ function AddItemDialog(props) {
             item_images: 'http://dummyimage.com/872x939.png/5fa2dd/ffffff',
             lost_date: lostDate,
             reward_price: prize
-          })
-          .then(function (response) {
-            console.log(response);
-            onClose();
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        })
+            .then(function (response) {
+                console.log(response);
+                onClose();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     return (
@@ -120,7 +120,7 @@ function AddItemDialog(props) {
             <Box>
                 <DialogContent>
                     <Grid container direction='column' spacing={2}>
-                    <Grid item><TextField fullWidth
+                        <Grid item><TextField fullWidth
                             margin="dense"
                             id="date"
                             label="Date of Loss"
@@ -206,7 +206,7 @@ function ItemDialog(props) {
                 <DialogContent dividers={true}>
                     <DialogContentText>
                         <Box fontWeight='bold' fontSize='h3.fontSize' color='black'>Description</Box>
-                        {item.description.repeat(10)}
+                        {item.description}
                     </DialogContentText>
                 </DialogContent>
             </Box>
@@ -222,19 +222,19 @@ ItemDialog.propTypes = {
 
 export default function Sea() {
 
-    const data = [{ "id": 1, "name": "Sweater", "description": "Duis at velit eu est congue elementum. In hac habitasse platea dictumst.", "user": "gseward0@huffingtonpost.com", "prize": 27.4, "image": "http://dummyimage.com/459x419.png/dddddd/000000", "latitude": 53.8979973863563, "longitude": 8.89195460775998 },
-    { "id": 2, "name": "Phone", "description": "Praesent lectus.", "user": "nwintersgill1@yolasite.com", "prize": 7.84, "image": "http://dummyimage.com/872x939.png/5fa2dd/ffffff", "latitude": 53.67228602082196, "longitude": 8.3414884021011 },
-    { "id": 3, "name": "Charger", "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.", "user": "dboylin2@tripod.com", "prize": 11.86, "image": "http://dummyimage.com/848x868.png/ff4444/ffffff", "latitude": 53.63885649669302, "longitude": 8.23958496923488 },
-    { "id": 4, "name": "Laptop", "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.", "user": "hmeake3@behance.net", "prize": 23.17, "image": "http://dummyimage.com/746x602.png/cc0000/ffffff", "latitude": 53.62776114546042, "longitude": 8.00432889796053 },
-    { "id": 5, "name": "Ring", "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.", "user": "garrault4@theglobeandmail.com", "prize": 6.06, "image": "http://dummyimage.com/551x924.png/cc0000/ffffff", "latitude": 53.47773121141045, "longitude": 8.89841235226803 },
-    { "id": 6, "name": "Necklace", "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.", "user": "ucowlard5@accuweather.com", "prize": 8.23, "image": "http://dummyimage.com/681x826.png/cc0000/ffffff", "latitude": 53.10823321849404, "longitude": 8.61770970011399 },
-    { "id": 7, "name": "Chocolate", "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.", "user": "pmation6@cnet.com", "prize": 4.63, "image": "http://dummyimage.com/608x564.png/cc0000/ffffff", "latitude": 53.61695847509916, "longitude": 8.79869930243156 },
-    { "id": 8, "name": "Birthday Card", "description": "Etiam justo. Etiam pretium iaculis justo.", "user": "rlorkin7@ft.com", "prize": 19.52, "image": "http://dummyimage.com/621x532.png/dddddd/000000", "latitude": 53.30904141240472, "longitude": 8.695874481 },
-    { "id": 9, "name": "Bag", "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.", "user": "ljiruch8@squidoo.com", "prize": 2.44, "image": "http://dummyimage.com/607x569.png/ff4444/ffffff", "latitude": 53.17471249970205, "longitude": 8.20102851389192 },
-    { "id": 10, "name": "Headband", "description": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", "user": "bbetun9@umn.edu", "prize": 10.5, "image": "http://dummyimage.com/617x552.png/ff4444/ffffff", "latitude": 53.99652263163999, "longitude": 8.09690585814018 }]
+    const data = [{ "id": 1, "name": "Sweater", "description": "My grandma made it for me!", "user": "gseward0@huffingtonpost.com", "prize": 27.4, "image": "https://www.na-kd.com/globalassets/nakd_chunky_long_oversized_turte_neck_sweater-1100-005467-0004_01g.jpg", "latitude": 53.8979973863563, "longitude": 8.89195460775998 },
+    { "id": 2, "name": "Phone", "description": "It's really precious to me. I got it on my 19th birthday.", "user": "nwintersgill1@yolasite.com", "prize": 7.84, "image": "https://images.indianexpress.com/2021/04/Asus-ROG-Phone-5-1200.jpg", "latitude": 53.67228602082196, "longitude": 8.3414884021011 },
+    { "id": 3, "name": "Charger", "description": "Can't live without my phone...", "user": "dboylin2@tripod.com", "prize": 11.86, "image": "https://cdn.thegrommet.com/media/catalog/resized/product/fill_w-762_h-572_bg-%23ffffff/3/3/3392-S-101_BST.jpg", "latitude": 53.63885649669302, "longitude": 8.23958496923488 },
+    { "id": 4, "name": "Laptop", "description": "It has all my business files. Please help me find it!", "user": "hmeake3@behance.net", "prize": 23.17, "image": "https://cdn.pocket-lint.com/r/s/1200x/assets/images/155087-laptops-review-microsoft-surface-laptop-go-review-image1-6ezitk9ymj.jpg", "latitude": 53.62776114546042, "longitude": 8.00432889796053 },
+    { "id": 5, "name": "Ring", "description": "It's my 31 year old wedding ring :(", "user": "garrault4@theglobeandmail.com", "prize": 6.06, "image": "https://ion.r2net.com/sets/Jewelry/Custom/Ring/S01xH01/S01xH01xPC_RND/S01xH01xPC_M2_RND_DIM_wht_0100CT_W_W/Stg_480X380.jpg", "latitude": 53.47773121141045, "longitude": 8.89841235226803 },
+    { "id": 6, "name": "Necklace", "description": "My ex before my last ex gave it to me, I still love him!", "user": "ucowlard5@accuweather.com", "prize": 8.23, "image": "https://cdn.shopify.com/s/files/1/1726/4473/products/ba-necklace-grit-gold-v2.jpg", "latitude": 53.10823321849404, "longitude": 8.61770970011399 },
+    { "id": 7, "name": "Chocolate", "description": "I didn't even start eating it :/", "user": "pmation6@cnet.com", "prize": 4.63, "image": "https://m.media-amazon.com/images/I/91qi6PV+XBL._SX425_.jpg", "latitude": 53.61695847509916, "longitude": 8.79869930243156 },
+    { "id": 8, "name": "Birthday Card", "description": "My bestie gave it to me. It means a lot to me.", "user": "rlorkin7@ft.com", "prize": 19.52, "image": "https://5.imimg.com/data5/AS/NS/MP/SELLER-1217060/musical-greeting-card-happy-birthday-500x500.jpg", "latitude": 53.30904141240472, "longitude": 8.695874481 },
+    { "id": 9, "name": "Bag", "description": "It's an original Gucci!", "user": "ljiruch8@squidoo.com", "prize": 2.44, "image": "https://i.pinimg.com/custom_covers/222x/401101979252099625_1510317635.jpg", "latitude": 53.17471249970205, "longitude": 8.20102851389192 },
+    { "id": 10, "name": "Headband", "description": "I always wear it for sports. That is why I hardly wear it. Please help me find it.", "user": "bbetun9@umn.edu", "prize": 10.5, "image": "https://www.compressport.com/inter/25772-large_default/running-thin-headband-bluelolite.jpg", "latitude": 53.99652263163999, "longitude": 8.09690585814018 }]
         ;
 
-    const messages = ['Almost There!', 'Atlantis is waiting...', 'Keep Going!', 'You got this!'];
+    const messages = ['Looking for more?', 'Maybe Atlantis is at the bottom of this ocean.\n Just Kidding. Or Am I?', 'There is one way to find out.', 'Atlantis is waiting...', 'Keep Going!', 'You got this!', '', '', 'Wait for it...', ''];
 
     const handleClickOpen = (d) => {
         setDialogItem(d);
@@ -298,13 +298,11 @@ export default function Sea() {
 
         return "#" + RR + GG + BB;
     }
-    var p = 5;
+    var p = -30;
     const handleOnVisibilityChange = (inView, entry) => {
         if (inView) {
-            setBgColor(shadeColor(bgColor, -p));
-            if (p <= 100) {
-                p = p + 10;
-            }
+            setBgColor(shadeColor(bgColor, p));
+            p = p - 20;
         }
     }
 
@@ -355,7 +353,7 @@ export default function Sea() {
                         <Grid container
                             spacing={0}
                             direction="column"
-                            justifyContent="center"
+                            justifyContent="space-between"
                             alignItems="center">
                             {items}
                         </Grid>
@@ -368,15 +366,19 @@ export default function Sea() {
                         WebkitTransition: "all .5s ease",
                         MozTransition: "all .5s ease"
                     }}>
-                        <Box height='100vh' />
+                        <Box height='10vh' />
                         <Fade triggerOnce={true} onVisibilityChange={handleOnVisibilityChange}>
-                            {messages.map((m) => (<Typography marginTop='100vh' variant="h2" align='center' fontWeight='bold' gutterBottom component="div" sx={{ fontFamily: 'Montserrat', color: 'white' }}>
+                            {messages.map((m) => (<Typography paddingX='10vw' marginTop='100vh' variant="h2" align='center' fontWeight='bold' gutterBottom component="div" sx={{ fontFamily: 'Montserrat', color: 'white' }}>
                                 {m}
                             </Typography>))}</Fade>
+                        <Fade triggerOnce={true} onVisibilityChange={handleOnVisibilityChange}>
+                            <Typography paddingX='10vw' marginTop='100vh' variant="h2" align='center' fontWeight='bold' component="div" sx={{ fontFamily: 'Montserrat', color: 'white' }}>
+                                I didn't say it was the smart thing, but it is the right thing.<br/> - Milo James Thatch
+                            </Typography></Fade>
                     </Box>
                 </Grid>
             </Grid>
-            <Box maxWidth='100vw'>
+            <Box maxWidth='100vw' sx={{ backgroundImage: atlantis }}>
                 <img src={atlantis} width='100%'></img>
             </Box>
             <ItemDialog onClose={handleClose} item={dialogItem} open={open} />
